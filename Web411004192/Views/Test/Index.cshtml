@@ -5,10 +5,23 @@
 <p>
     123<br />
     123456<br />
+    <a>123456</a><br />
     <u>dqwdqwd</u>
 </p>
-<form>
-    帳號:<input type="text">
-</form>
+@using(Html.BeginForm("Index","Test",FormMethod.Post))
+{
+    <div>
+        帳號:@Html.TextBox("account")<br />
+        密碼:@Html.Password("password")<br />
+        年齡:@Html.TextBox("age")
+        性別:@Html.RadioButton("gender", "A")男生
+        @Html.RadioButton("gender", "B")女生 <br />
+        興趣:@Html.CheckBox("reading", "A")看書
+        @Html.CheckBox("reading", "B")游泳<br />
+        關於我:@Html.TextArea("about")
+    </div>
+
+}
+
 
 
